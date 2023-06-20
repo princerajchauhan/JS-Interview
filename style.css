@@ -128,6 +128,10 @@ pre{
     header > p{
         font-size: 25px;
     }
+    header > p::before{
+        border-right: 2px solid red;
+        border-bottom: 2px solid yellow;
+    }
     .dayBtn{
         padding: 5px 10px;
     }
