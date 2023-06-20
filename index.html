@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Interview Question</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <p data-text="JS Interview Question">JS Interview Question</p>
+    </header>
+
+    <div class="DayBtns">
+        <button class="dayBtn">Day-1</button>
+        <!-- <button class="dayBtn">Day-2</button>
+        <button class="dayBtn">Day-3</button>
+        <button class="dayBtn">Day-4</button> -->
+    </div>
+
+    <hr size="5px" color="gray" style="margin-top: 20px;">
+    <div class="questions">
+
+        <div class="firstDay">
+
+            <!-- *********************** Question 1 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q1. </span>Difference between “ == “ and “ === “ operators.</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li>The == operator does the type conversion of the operands before comparison.</li>
+                        <li>the === operator compares the values as well as the data types of the operands.</li>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            let a = 5
+            let b = '5'
+
+            console.log(a == b)    // true
+            console.log(a === b)   // false
+                    </pre>
+                </div>
+            </div>
+
+            <!-- *********************** Question 2 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q2. </span>What are the differences between var, let and const?</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li>var and let create variables that can be reassigned another value. const creates "constant"
+                            variables that cannot be reassigned another value</li>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            {
+                var a =10;
+                let b =20;
+                const c =30;
+            }
+            console.log(a);  //10
+            console.log(b);  // b is not defined
+            console.log(c);  // c is not defined
+            
+            let d = 10;
+            let d = 20; // SyntaxError: Identifier 'd' has already been declared
+            d = 11;
+            console.log(d); // 11
+                
+            const e = 10;
+            e = 11;
+            console.log(e); // Assignment to constant variable
+                    </pre>
+                </div>
+            </div>
+
+            <!-- *********************** Question 3 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q3. </span>What is hoisting?</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li>In JavaScript, hoisting allows you to use functions and variables before they're declared.
+                        </li>
+                        <li>Hoisting only possible for var not for let and const.</li>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            console.log(h);     // undefined
+            var h = 'hello'; 
+                    </pre>
+                </div>
+            </div>
+
+            <!-- *********************** Question 4 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q4. </span>What is a Temporal Dead Zone?</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li>The reason that we get a reference error when we try to access a let or const variable
+                            before its declaration is because of the temporal dead zone (TDZ).</li>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            console.log(h); // ReferenceError because we're in the TDZ
+            let h = 'Hello';  // ReferenceError: Cannot access 'foo' before initialization
+                    </pre>
+                </div>
+            </div>
+
+            <!-- *********************** Question 5 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q5. </span>What is meant by first class functions?</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li>First-class functions are functions that are treated as variables.</li>
+                        <li>They can also be parsed into other functions as arguments</li>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            const fun = ()=>{
+                console.log("hello world")
+            }
+            fun()
+                    </pre>
+                </div>
+            </div>
+
+            <!-- *********************** Question6 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">6. </span>What are pure functions?</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li>A pure function in JavaScript is a function that returns the same result if the same
+                            arguments(input) are passed in the function.</li>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            funtion add(a,b){
+                return a+b
+            }
+            console.log(5, 6)   // 11
+                    </pre>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
