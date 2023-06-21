@@ -15,16 +15,21 @@
     </header>
 
     <div class="DayBtns">
-        <button class="dayBtn">Day-1</button>
-        <!-- <button class="dayBtn">Day-2</button>
-        <button class="dayBtn">Day-3</button>
+        <button class="dayBtn" onclick="day1()">Day-1</button>
+        <button class="dayBtn" onclick="day2()">Day-2</button>
+        <!-- <button class="dayBtn">Day-3</button>
         <button class="dayBtn">Day-4</button> -->
     </div>
 
-    <hr size="5px" color="gray" style="margin-top: 20px;">
+    <hr size="5px" color="gray" style="margin-top: 30px;">
+    <div class="head">
+        Day - 1
+    </div>
+    <hr size="5px" color="gray">
+
     <div class="questions">
 
-        <div class="firstDay">
+        <div id="firstDay">
 
             <!-- *********************** Question 1 ************************-->
             <div class="quesno">
@@ -124,7 +129,7 @@
 
             <!-- *********************** Question6 *************************-->
             <div class="quesno">
-                <p class="ques"><span class="span">6. </span>What are pure functions?</p>
+                <p class="ques"><span class="span">Q6. </span>What are pure functions?</p>
                 <div class="ans">
                     <ul type="circle">
                         <li>A pure function in JavaScript is a function that returns the same result if the same
@@ -135,6 +140,204 @@
                 return a+b
             }
             console.log(5, 6)   // 11
+                    </pre>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ========================================= SECOND DAY =========================================== -->
+        <div id="secondDay">
+
+            <!-- ************************** Question1 ************************** -->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q1. </span>What is execution context?</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li style="font-size: 18px;">Synchronous JavaScript</li>
+                        <ul type="square" class="list">
+                            <li>Global Execution Context</li>
+                            <li>Code Execution</li>
+                            <li>Memory Allocation</li>
+                            <li>Function Execution context</li>
+                            <li>Call Stack</li>
+                        </ul>
+
+                        <li style="font-size: 18px;">Asynchronous JavaScript</li>
+                        <ul type="square" class="list">
+                            <li>Event Loop</li>
+                            <li>Callback queue</li>
+                            <li>Microtask Queue</li>
+                            <li>Call Stack</li>
+                        </ul>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>  
+            let a = 10
+            function hello(v){
+                console.log(v)
+            }
+            hello(a)    // 10
+            hello(20)   // 20
+                    </pre>
+                </div>
+            </div>
+
+            <!-- *********************** Question2 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q2. </span>What is an event loop and call stack</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li><b>Event Loop:</b> Then comes the Event Loop, which keeps running continuously and checks
+                            the Main
+                            stack, if it has any frames to execute, if not then it checks Callback queue, if Callback
+                            queue has codes to execute then it pops the message from it to the Main Stack for the
+                            execution.</li>
+                        <li><b>Call Stack:</b> This is where all your javascript code gets pushed and executed one by
+                            one as the
+                            interpreter reads your program, and gets popped out once the execution is done.</li>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            console.log('Message 1');   // Execute 1st
+            // Print message after 100 millisecond
+            setTimeout(function() {
+                console.log('Message 2');       
+            }, 100);
+            console.log('Message 3');   // Execute 2nd
+                    </pre>
+                </div>
+            </div>
+
+            <!-- *********************** Question3 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q3. </span>What is creation phase and execution phase?</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li><b>Creation Phase</b></li>
+                        <ul type="square" class="list">
+                            <li>In the first run, It picks all function declarations and stores them in memory with
+                                their reference.</li>
+                            <li>In the second run, It picks all variables and assign undefined to them. In the event of
+                                a conflict between variable and function declaration name then that variable is
+                                ignored.</li>
+                        </ul>
+                        <li><b>Execution Phase</b></li>
+                        <ul type="square" class="list">
+                            <li>Variables assigned with values given in code at the time of initialization</li>
+                            <li>Functions executed</li>
+                        </ul>
+
+                    </ul>
+                    <!-- <pre><p style="font-size: 16px;">Example :-</p>            
+            console.log('Message 1');   // Execute 1st
+            // Print message after 100 millisecond
+            setTimeout(function() {
+                console.log('Message 2');       
+            }, 100);
+            console.log('Message 3');   // Execute 2nd
+                    </pre> -->
+                </div>
+            </div>
+
+            <!-- *********************** Question4 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q4. </span>What is the spread operator?</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li>Spread operator allows us to destructure the non-primitive datatype like object and array
+                            to access elemnets individually.</li>
+                        <li> The JavaScript spread operator ( ... ) allows us to quickly copy all or part of an existing
+                            array or object into another array or object.</li>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            let a = [2, 5, 6]
+            let b = a   // shallow copy
+
+            let c = [...a]  // spred operator - deep copy
+                    </pre>
+                </div>
+            </div>
+
+            <!-- *********************** Question5 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q5. </span>What is the use of setTimeout</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li>It is used to delay the output with given time.</li>
+                        <li>The setTimeout() method sets a timer which executes a function or specified piece of code
+                            once the timer expires.</li>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            setTimeout(()=>{
+                console.log("Hello")     // print 'Hello' after 2 seconds
+            }, 2000)
+                    </pre>
+                </div>
+            </div>
+
+            <!-- *********************** Question6 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q6. </span>What are callbacks?</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li>A function that can pass inside another function as an argument.</li>
+                        <li>A callback is a function that passed as an argument to another function.</li>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            function sum(a,b){
+                return a+b
+            }
+            function printSum(a, b, add){
+                console.log("Total sum :",add(a,b))         
+            }
+            printSum(5, 6, sum)         // sum is a callback function
+                    </pre>
+                </div>
+            </div>
+
+            <!-- *********************** Question7 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q7. </span>What is callback hell</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li>Callback Hell is essentially nested callbacks stacked below one another forming a pyramid structure.</li>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            setTimeout(()=>{
+                console.log("A")
+                setTimeout(()=>{
+                    console.log("B")
+                    setTimeout(()=>{
+                        console.log("C")
+                        setTimeout(()=>{
+                            console.log("D")
+                            setTimeout(()=>{
+                                console.log("E")
+                            },5000)
+                        },4000)
+                    },3000)
+                },2000)
+            },1000)
+                    </pre>
+                </div>
+            </div>
+
+            <!-- *********************** Question8 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q8. </span>Difference between undefined vs not defined vs NaN</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li><b>undefined</b> - variable declared but not initialized</li>
+                        <li><b>not define</b> - variable is not declared.</li>
+                        <li><b>NaN</b> - Not a number (like integer-string or interger/string)</li>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            let a;
+            console.log(a)  // undefined
+
+            console.log(b)  // variable 'b' is not defined
+
+            let c = 10-'abc'
+            console.log(c)  // NaN
                     </pre>
                 </div>
             </div>
