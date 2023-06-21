@@ -17,8 +17,8 @@
     <div class="DayBtns">
         <button class="dayBtn" onclick="day1()">Day-1</button>
         <button class="dayBtn" onclick="day2()">Day-2</button>
-        <!-- <button class="dayBtn">Day-3</button>
-        <button class="dayBtn">Day-4</button> -->
+        <button class="dayBtn" onclick="day3()">Day-3</button>
+        <!-- <button class="dayBtn">Day-4</button> -->
     </div>
 
     <hr size="5px" color="gray" style="margin-top: 30px;">
@@ -227,14 +227,6 @@
                         </ul>
 
                     </ul>
-                    <!-- <pre><p style="font-size: 16px;">Example :-</p>            
-            console.log('Message 1');   // Execute 1st
-            // Print message after 100 millisecond
-            setTimeout(function() {
-                console.log('Message 2');       
-            }, 100);
-            console.log('Message 3');   // Execute 2nd
-                    </pre> -->
                 </div>
             </div>
 
@@ -299,7 +291,8 @@
                 <p class="ques"><span class="span">Q7. </span>What is callback hell</p>
                 <div class="ans">
                     <ul type="circle">
-                        <li>Callback Hell is essentially nested callbacks stacked below one another forming a pyramid structure.</li>
+                        <li>Callback Hell is essentially nested callbacks stacked below one another forming a pyramid
+                            structure.</li>
                     </ul>
                     <pre><p style="font-size: 16px;">Example :-</p>            
             setTimeout(()=>{
@@ -338,6 +331,173 @@
 
             let c = 10-'abc'
             console.log(c)  // NaN
+                    </pre>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ========================================= THIRD DAY =========================================== -->
+        <div id="thirdDay">
+
+            <!-- *********************** Question1 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q1. </span>What are promises and why do we need them?</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li>Promise is an object that returns a value which you to receive in future.</li>
+                        <li>Promise are use to handle async operation in JS. easy to handle callback hell, also use to
+                            handle the error.</li>
+                        <li>basically in promise there are Three stage</li>
+                        <ul type="square" class="list">
+                            <li>Pending - initial stage</li>
+                            <li>Resolve - (then method)</li>
+                            <li>Reject - (catch method)</li>
+                        </ul>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            const isFine = false
+            const promise = new Promise((resolve, reject) => {
+                if(isFine){
+                    resolve("Everything is fine")
+                }
+                else{
+                    reject("Something error")
+                }
+            })
+            
+            promise.then(data => console.log(data))
+            .catch(err => console.log(err))
+                    </pre>
+                </div>
+            </div>
+
+            <!-- *********************** Question2 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q2. </span>What is promise chaining</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li>Promise chaining is a technique in JavaScript to execute multiple asynchronous operations in
+                            a specific order by chaining promises together using the then method</li>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            function promiseFun(text, timeOut){
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        console.log(text)
+                        resolve()
+                    }, timeOut)
+                })
+            }
+                        
+            promiseFun("Prince", 1000)
+            .then(() => promiseFun("Raj", 2000))
+            .then(() => promiseFun("Chauhan", 3000))
+            .then(() => promiseFun("Hello", 2000))
+                    </pre>
+                </div>
+            </div>
+
+            <!-- *********************** Question3 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q3. </span>What is the DOM?</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li>DOM - Document Object Model</li>
+                        <li>It is javascript mechanism by which we can change the document structure, style, and content.</li>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            let idVar = document.getElementById('Id')
+            idVar.style.color = 'red'
+                    </pre>
+                </div>
+            </div>
+
+            <!-- *********************** Question4 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q4. </span>What are closures? Give an example of closure</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li>A closure is the combination of a function bundled together (enclosed) with references to
+                            its surrounding state (the lexical environment).</li>
+                        <li>inner function is able to excess the outer function variable but vise-varsa not possible. </li>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            function outer(){
+                let ans = 10            // Lexical scope
+                funtion inner(){
+                    console.log(ans)    //10
+                }
+                inner()
+            }
+            outer()
+                    </pre>
+                </div>
+            </div>
+
+            <!-- *********************** Question5 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q5. </span>How many operators do we have in JS ?</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li><b>Arithemic operator</b></li>
+                        <ul type="square" class="list">
+                            <li>Add, Sub, Multi, Div(/), Module (%), Expontial (**), increment ++, decrement--</li>
+                        </ul>
+
+                        <li><b>Assignment operator</b></li>
+                        <ul type="square" class="list">
+                            <li>Assign (=), Add Assign (+=), Sub Assign (-=), (*=), (/=), (%=)</li>
+                        </ul>
+
+                        <li><b>Bitwise operator</b></li>
+                        <ul type="square" class="list">
+                            <li>Bitwise OR (|), Bitwise AND (&), Bitwise NOT (~), Left shift (<<), right shift(>>)</li>
+                        </ul>
+
+                        <li><b>Comparision operator</b></li>
+                        <ul type="square" class="list">
+                            <li>equal (==), strict equal (===), Not equal (!=), Strict Not equal (!==), greate than,
+                                less than, greate than equal, less than equalequal (==), strict equal (===), Not equal
+                                (!=), Strict Not equal (!==), greate than, less than, greate than equal, less than equal
+                            </li>
+                        </ul>
+
+                        <li><b>Logical operator</b></li>
+                        <ul type="square" class="list">
+                            <li>AND (&&)</li>
+                            <li>OR (||)</li>
+                            <li>NOT (!)</li>
+                        </ul>
+
+                        <li><b>Ternary operator</b></li>
+                        <ul type="square" class="list">
+                            <li>(Condition) ? "Execute True Condition" : "Execute False Condition"</li>
+                        </ul>
+
+                        <li><b>typeof operator</b></li>
+                        <ul type="square" class="list">
+                            <li>return dataType</li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- *********************** Question6 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q6. </span>What are objects in javascript?</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li>Non-premitive data type</li>
+                        <li>store date in the form of Key-Value pair saparated by colon. </li>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            const obj = {
+                name: "Prince",
+                course: "MERN",
+                city: "Delhi",
+                year: 2023
+            }
                     </pre>
                 </div>
             </div>

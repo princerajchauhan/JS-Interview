@@ -113,9 +113,10 @@ pre{
     margin-left: 30px;
 }
 
-#secondDay{
+#secondDay, #thirdDay{
     display: none;
 }
+
 
 
 /* ******************************** Responsive **************************** */
