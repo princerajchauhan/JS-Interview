@@ -5,6 +5,7 @@ let head = document.getElementsByClassName('head')[0]
 let firstDay = document.getElementById('firstDay')
 let secondDay = document.getElementById('secondDay')
 let thirdDay = document.getElementById('thirdDay')
+let fourthDay = document.getElementById('fourthDay')
 
 
 function day1() {
@@ -13,6 +14,7 @@ function day1() {
     firstDay.style.display = "block"
     secondDay.style.display = "none"
     thirdDay.style.display = "none"
+    fourthDay.style.display = "none"
 }
 
 function day2() {
@@ -21,6 +23,7 @@ function day2() {
     secondDay.style.display = "block"
     firstDay.style.display = "none"
     thirdDay.style.display = "none"
+    fourthDay.style.display = "none"
 }
 
 function day3() {
@@ -29,4 +32,14 @@ function day3() {
     secondDay.style.display = "none"
     firstDay.style.display = "none"
     thirdDay.style.display = "block"
+    fourthDay.style.display = "none"
+}
+
+function day4() {
+    head.innerText = "Day - 4"
+    head.style.color = "White"
+    secondDay.style.display = "none"
+    firstDay.style.display = "none"
+    thirdDay.style.display = "none"
+    fourthDay.style.display = "block"
 }

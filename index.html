@@ -18,7 +18,7 @@
         <button class="dayBtn" onclick="day1()">Day-1</button>
         <button class="dayBtn" onclick="day2()">Day-2</button>
         <button class="dayBtn" onclick="day3()">Day-3</button>
-        <!-- <button class="dayBtn">Day-4</button> -->
+        <button class="dayBtn" onclick="day4()">Day-4</button>
     </div>
 
     <hr size="5px" color="gray" style="margin-top: 30px;">
@@ -29,6 +29,7 @@
 
     <div class="questions">
 
+        <!-- ========================================= FIRST DAY =========================================== -->
         <div id="firstDay">
 
             <!-- *********************** Question 1 ************************-->
@@ -404,7 +405,8 @@
                 <div class="ans">
                     <ul type="circle">
                         <li>DOM - Document Object Model</li>
-                        <li>It is javascript mechanism by which we can change the document structure, style, and content.</li>
+                        <li>It is javascript mechanism by which we can change the document structure, style, and
+                            content.</li>
                     </ul>
                     <pre><p style="font-size: 16px;">Example :-</p>            
             let idVar = document.getElementById('Id')
@@ -420,7 +422,8 @@
                     <ul type="circle">
                         <li>A closure is the combination of a function bundled together (enclosed) with references to
                             its surrounding state (the lexical environment).</li>
-                        <li>inner function is able to excess the outer function variable but vise-varsa not possible. </li>
+                        <li>inner function is able to excess the outer function variable but vise-varsa not possible.
+                        </li>
                     </ul>
                     <pre><p style="font-size: 16px;">Example :-</p>            
             function outer(){
@@ -498,6 +501,177 @@
                 city: "Delhi",
                 year: 2023
             }
+                    </pre>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ========================================= FOURTH DAY =========================================== -->
+        <div id="fourthDay">
+
+            <!-- *********************** Question1 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q1. </span>What are function constructors?</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li>A function constructor is a way to create a object using a function as a blue print or
+                            template.</li>
+                        <li>It allow you to define a reusable structure for creating multiple object with similar
+                            properties and method.</li>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            function Car(model, year){
+                this.model = model
+                this.year = year
+            }
+            Car.prototype.start = function(){
+                console.log(this.model," starting.....")
+            }
+            
+            let thar = new Car("Thar", 2023)
+            thar.start()       // Thar starting.....
+                    </pre>
+                </div>
+            </div>
+
+            <!-- *********************** Question2 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q2. </span>Explain call(), apply() and, bind() methods. Give an
+                    example of call(), apply(), bind()</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li>The <b>call() </b>method invokes a function in which first argument will be the
+                            object and rest of the arguments required by function will be provided as an individual
+                            arguments.</li>
+                        <li>The <b>apply() </b> method invokes a function in which first argument will be the
+                            object and rest of the arguments will be passed as an array of elements.</li>
+                        <li>The <b>bind()</b> method returns a new function and this function will be having
+                            the reference of the object passed, now whenever you want to use this returned function in
+                            the code you can use it by passing rest of the arguments.</li>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            const obj = {
+                name: "Prince",
+                course: "MERN",
+                batch: "EAC01"
+            }
+            
+            function display(greet1, year){
+                console.log(this.name,":",this.course,":",this.batch,":",greet1,":",year)
+            }
+            
+            display.call(obj, "Hello", 2023)    //Prince : MERN : EAC01 : Hello : 2023
+            display.apply(obj, ["Hi", 2024])    //Prince : MERN : EAC01 : Hi : 2024
+            let result = display.bind(obj, 'Hey', 2025)  //Prince : MERN : EAC01 : Hey : 2025
+            result()
+                    </pre>
+                </div>
+            </div>
+
+            <!-- *********************** Question3 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q3. </span>What is the purpose of async/await keywords?</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li>An async function is a function declared with the async keyword, and the await keyword is
+                            permitted within it. The async and await keywords enable asynchronous, promise-based
+                            behavior to be written in a cleaner style, avoiding the need promise chains.</li>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            function promiseFun(text, time){
+                return new Promise((resolve, reject) => {
+                    setTimeout(()=>{
+                        console.log(text)
+                        resolve()
+                    }, time)
+                })
+            }
+            
+            async function print(){
+                await promiseFun('A',1000)
+                await promiseFun('E',2000)
+                await promiseFun('I',3000)
+                await promiseFun('O',4000)
+                await promiseFun('U',5000)
+            }
+            print()
+                    </pre>
+                </div>
+            </div>
+
+            <!-- *********************** Question4 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q4. </span>Explain prototypes</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li>The prototype is an object that is associated with every JavaScript object.</li>
+                        <li>It serves as a blueprint or template for creating new objects through inheritance. The
+                            prototype object contains properties and methods that are shared among all instances created
+                            from it.</li>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            function Animal(name){
+                this.name = name
+            }
+            Animal.prototype.shout = function(){
+                console.log(this.name,"shouting.......")
+            }
+            
+            let cat = new Animal('Bruno')
+            cat.shout()     // Bruno shouting.......
+                    </pre>
+                </div>
+            </div>
+
+            <!-- *********************** Question5 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q5. </span>What is prototype chain</p>
+                <div class="ans">
+                    <ul type="circle">
+                        <li>Prototypes are the means of inheritance in JavaScript. The prototype of an object would also
+                            have a prototype object. This continues until we reach the top level when there is no
+                            prototype object.
+                            This is called prototype chaining</li>
+                    </ul>
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            function promise(text, time){
+                return new Promise((resolve, reject) => {
+                setTimeout(()=>{
+                    console.log(text)
+                    resolve()
+                }, time)
+                })
+            }
+            
+            promise('A', 1000)
+            .then(() => promise('B', 2000))
+            .then(() => promise('C', 3000))
+                    </pre>
+                </div>
+            </div>
+
+            <!-- *********************** Question6 *************************-->
+            <div class="quesno">
+                <p class="ques"><span class="span">Q6. </span>Give an example of inheritance using function constructor</p>
+                <div class="ans">
+                    <pre><p style="font-size: 16px;">Example :-</p>            
+            function Animal(name, color){
+                this.name = name
+                this.color = color
+            }
+            
+            function Dog(name, color){
+                Animal.call(this,name,color)
+            }
+                // inherits the properties of parent
+            Dog.prototype = Object.create(Animal.prototype)
+            Dog.prototype.bark = function(){
+                console.log(this.name,"is barking...........")
+            }
+            
+            let dog = new Dog("Bruno", "brown")
+            dog.bark()
                     </pre>
                 </div>
             </div>
